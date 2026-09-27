@@ -35,6 +35,7 @@ from enferno.extensions import db, session, babel, rds, debug_toolbar, mail, lim
 from enferno.public.views import bp_public
 from enferno.setup.views import bp_setup
 from enferno.settings import Config
+from enferno.rag import rag
 from enferno.user.forms import (
     ExtendedMfRecoveryCodesForm,
     ExtendedChangePasswordForm,
@@ -165,6 +166,7 @@ def register_blueprints(app):
     app.register_blueprint(bp_user)
     app.register_blueprint(admin)
     app.register_blueprint(imports)
+    app.register_blueprint(rag)
 
     if app.config.get("EXPORT_TOOL"):
         try:

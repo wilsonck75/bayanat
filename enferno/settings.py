@@ -567,6 +567,11 @@ class TestConfig:
     WEB_IMPORT = False
     WHISPER_MODEL = "base"
     ADV_ANALYSIS = False
+    
+    # RAG Settings
+    CHROMA_DB_DIR = os.environ.get("CHROMA_DB_DIR", "chroma_db")
+    EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "intfloat/multilingual-e5-small")
+    RAG_DATA_DIR = os.environ.get("RAG_DATA_DIR", "data")
 
     # YTDLP Settings
     YTDLP_PROXY = ""
